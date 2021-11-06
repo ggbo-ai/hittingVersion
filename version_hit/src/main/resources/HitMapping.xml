@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.data.UserMapper">
+<mapper namespace="com.version_hit.Mapping.HitMapping">
+    <resultMap id="ResultMap" type="com.version_hit.PO.RulePO">
+        <id column="id" property="aid"/>
+        <result column="platform" property="platform"/>
+        <result column="download_url" property="download_url"/>
+        <result column="update_version_code" property="update_version_code"/>
+        <result column="md5" property="md5"/>
+        <result column="device_id_list" property="device_id_list"/>
+        <result column="max_version" property="max_update_version_code"/>
+        <result column="min_version" property="min_update_version_code"/>
+        <result column="max_os_api" property="max_os_api"/>
+        <result column="min_os_api" property="min_os_api"/>
+        <result column="cpu_arch" property="cpu_arch"/>
+        <result column="channel" property="channel"/>
+        <result column="title" property="title"/>
+        <result column="update_tips" property="update_tips"/>
+    </resultMap>
+
+    <select id="getRuleLists" resultMap="ResultMap">
+        select * from `rules`;
+    </select>
 
 
 
